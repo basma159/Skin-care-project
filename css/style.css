@@ -1,0 +1,136 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Grechen+Fuemen&display=swap');
+
+
+body {
+    height: 2000px;
+    justify-content: center;
+    font-family: "Bricolage Grotesque", cursive;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+.whats-icon {
+    box-shadow: 2px 2px 20px black;
+    border: 2px solid #F39C32;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F39C32;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*////////////////// header /////////////////*/
+ul li {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+header ul li:hover {
+    background-color: white;
+    color: rgb(0, 168, 89);
+}
+
+.active {
+    background-color: white;
+    color: rgb(0, 168, 89);
+}
+
+header {
+    padding: 8px 10px;
+    /* position:static; */
+}
+
+.logo,
+.para {
+    font-family: "Grechen Fuemen", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* @media (min-width: 768px) {
+    header .fa-bars-staggered {
+        display: none !important;
+    }
+} */
+
+/* ///////////////////// main section////////// */
+main {
+    padding-top: 120px;
+}
+
+main,
+#about {
+    background-color: rgb(14, 124, 102);
+}
+
+.conatiner {
+    padding: 40px;
+}
+
+.btn-1 {
+    border: 1px solid transparent;
+}
+
+.btn-1:hover {
+    background-color: transparent;
+    border: 1px solid #F39C32;
+    box-shadow: 2px 2px 20px #F39C32;
+}
+
+.btn-2 {
+    background-color: transparent;
+    border: 1px solid #F39C32;
+    box-shadow: 2px 2px 20px #F39C32;
+}
+
+.btn-2:hover {
+    background-color: #F39C32;
+    animation: tada 1s;
+}
+
+/* ///////////////////////////////////// about /////////////////////////// */
+.icon {
+    transition: transform 0.3s ease;
+}
+
+.parent:hover .icon {
+    animation: tada 1s;
+}
+
+/* ///////////////////////////////////// footer ////////////////////////// */
+footer ul li {
+    font-size: 20px;
+}
+
+footer ul li:hover {
+    transform: scale(1.2);
+    text-decoration: underline;
+}
+
+.btn-3:hover {
+    box-shadow: 2px 2px 20px rgb(14, 124, 102);
+}
+
+.btn-3:hover .icon-f {
+    animation: tada 1s;
+}
