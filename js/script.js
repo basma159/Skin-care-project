@@ -5,10 +5,10 @@ const options = {
     threshold: .5,
     // rootMargin:"64px",
 }
-
+const a = Array.from(document.querySelectorAll("header ul a"))
 const observer = new IntersectionObserver((entries) => {
     const visibleSection = entries.find(el => el.isIntersecting)
-    const a = document.querySelectorAll("header ul a").forEach(a => {
+    a.forEach(a => {
         const li = a.closest("li")
         if (visibleSection) {
             if ("#" + visibleSection.target.id == a.getAttribute("href")) {
@@ -49,9 +49,15 @@ menuIcon.addEventListener("click", e => {
 
 document.addEventListener("click", (e) => {
     if (!header.contains(e.target)) {
-        menu.classList.add("hidden");
-        menuIcon.classList.remove("fa-xmark");
-        menuIcon.classList.add("fa-bars-staggered");
+        menu.classList.add("hidden")
+        menuIcon.classList.remove("fa-xmark")
+        menuIcon.classList.add("fa-bars-staggered")
+    }
+    const isLink = a.some(a => a.contains(e.target))
+    if (isLink) {
+        menu.classList.add("hidden")
+        menuIcon.classList.remove("fa-xmark")
+        menuIcon.classList.add("fa-bars-staggered")
     }
 });
 
@@ -61,9 +67,9 @@ document.addEventListener("DOMContentLoaded", e => {
 
     const t1 = gsap.timeline()
     t1.from(".main-head", {
-        delay:1,
+        delay: 1,
         scale: 1.5,
-        autoAlpha:0,
+        autoAlpha: 0,
         duration: 1.5,
         ease: "elastic"
     })
@@ -82,37 +88,75 @@ document.addEventListener("DOMContentLoaded", e => {
         ease: "elastic"
     })
 
-    t1.from(".product-head", {
+    gsap.registerPlugin(ScrollTrigger)
+    const t2 = gsap.timeline({
+        scrollTrigger: {
+            // clearProps:"all",
+            trigger: ".products",
+            start: "top 80%",
+            end: "bottom 70%",
+            scrub: true,
+            // invalidateOnRefresh: true,
+            // markers: true
+        }
+    })
+    t2.from(".product-head", {
         scale: 1.5,
         opacity: 0,
         duration: 1,
         ease: "elastic"
-    }, ">1")
-
-    t1.from(".card-1, .card-2, .card-3", {
-        clearProps: "all",
-        y: 100,
-        autoAlpha: 0,
-        duration: 2.5,
-        stagger: 0.5,
-        ease: "elastic",
     })
 
-    t1.from(".about-head", {
+    t2.fromTo(".card-1, .card-2, .card-3", {
+        y: -100,
+        autoAlpha: 0
+    }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.5,
+        ease: "power2.out",
+    })
+    t2.to(".product-head", {
+        autoAlpha: 0
+    })
+    t2.to(".card-1, .card-2, .card-3", {
+        y: 100,
+        autoAlpha: 0,
+        stagger: 0.5,
+        ease: "power2.in",
+
+    })
+    const t3 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 60%",
+            end: "bottom 50%",
+            scrub: true,
+            // invalidateOnRefresh: true
+        }
+    })
+
+    t3.from(".about-head", {
         scale: 1.5,
         opacity: 0,
         duration: 1,
         ease: "elastic"
+    })
 
-    }, ">1")
-    t1.from(".icon-parent-1,.icon-parent-2,.icon-parent-3,.icon-parent-4,.icon-parent-5,.icon-parent-6 ", {
-        clearProps: "all",
+    t3.from(".icon-parent-1,.icon-parent-2,.icon-parent-3,.icon-parent-4,.icon-parent-5,.icon-parent-6 ", {
         y: 100,
         opacity: 0,
         duration: 3,
         stagger: 0.5,
         ease: "elastic",
-    }, ">1");
+    });
+    t3.to(".about-head", {
+        autoAlpha: 0
+    })
+    t3.to(".icon-parent-1,.icon-parent-2,.icon-parent-3,.icon-parent-4,.icon-parent-5,.icon-parent-6 ", {
+        autoAlpha: 0,
+        stagger: 0.5
+    })
 
     gsap.to(".fa-heart", {
         scale: 1.7,
@@ -121,8 +165,57 @@ document.addEventListener("DOMContentLoaded", e => {
         yoyo: true,
         ease: "power1.inOut"
     });
+    const t4 = gsap.timeline({
+        scrollTrigger:{
+            trigger:"#contact",
+            start:"top 50%",
+            end:"top 80%",
+            scrub:true
+        }
+    })
 
+    t4.from(".logo-footer", {
+        y: - 100,
+        duration: 0.5,
+        autoAlpha: 0
+    })
+    t4.from(".head-footer", {
+        y: - 100,
+        duration: 0.5,
+        autoAlpha: 0
+    })
+    t4.from(".para", {
+        scale: 1.5,
+        duration: 0.5,
+        autoAlpha: 0
+    })
+    t4.from(".list-footer li", {
+        clearProps: "all",
+        y: -100,
+        duration: 2,
+        autoAlpha: 0,
+        stagger: 0.5,
+    })
+    t4.from(".list-footer li", {
+        clearProps: "all",
+        y: -100,
+        duration: 1.5,
+        autoAlpha: 0,
+        stagger: 0.5,
+    })
+    t4.from(".btns-footer a", {
+        clearProps: "all",
+        y: -100,
+        duration: 1,
+        autoAlpha: 0,
+        stagger: 0.5,
+    })
 
+    t4.from(".copy", {
+        y: -100,
+        duration: 0.7,
+        autoAlpha: 0
+    })
 })
 
 
