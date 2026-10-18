@@ -1,7 +1,4 @@
 
-
-
-
 ///// observer
 const sections = document.querySelectorAll(".section")
 const options = {
@@ -32,7 +29,7 @@ sections.forEach(section => {
 })
 
 
-/// menu in mobile \
+/// menu in mobile 
 
 const header = document.querySelector("header");
 const menuIcon = document.querySelector(".menu-icon")
@@ -64,13 +61,11 @@ document.addEventListener("DOMContentLoaded", e => {
 
     const t1 = gsap.timeline()
     t1.from(".main-head", {
-        delay: 1,
+        delay:1,
         scale: 1.5,
-        opacity: 0,
+        autoAlpha:0,
         duration: 1.5,
         ease: "elastic"
-
-
     })
     t1.from(".btn-1,.btn-2", {
         y: 100,
@@ -97,12 +92,11 @@ document.addEventListener("DOMContentLoaded", e => {
     t1.from(".card-1, .card-2, .card-3", {
         clearProps: "all",
         y: 100,
-        // autoAlpha: 0,
-        opacity: 0,
+        autoAlpha: 0,
         duration: 2.5,
         stagger: 0.5,
         ease: "elastic",
-    }, ">")
+    })
 
     t1.from(".about-head", {
         scale: 1.5,
