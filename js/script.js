@@ -146,7 +146,6 @@ document.addEventListener("DOMContentLoaded", e => {
     t3.from(".icon-parent-1,.icon-parent-2,.icon-parent-3,.icon-parent-4,.icon-parent-5,.icon-parent-6 ", {
         y: 100,
         opacity: 0,
-        duration: 3,
         stagger: 0.5,
         ease: "elastic",
     });
