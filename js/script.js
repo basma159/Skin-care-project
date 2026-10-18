@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", e => {
     t2.from(".product-head", {
         scale: 1.5,
         opacity: 0,
-        duration: 1,
+        // duration: 1,
         ease: "elastic"
     })
 
@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", e => {
     t3.from(".about-head", {
         scale: 1.5,
         opacity: 0,
-        duration: 1,
         ease: "elastic"
     })
 
@@ -175,44 +174,44 @@ document.addEventListener("DOMContentLoaded", e => {
 
     t4.from(".logo-footer", {
         y: - 100,
-        duration: 0.5,
+        // duration: 0.5,
         autoAlpha: 0
     })
     t4.from(".head-footer", {
         y: - 100,
-        duration: 0.5,
+        // duration: 0.5,
         autoAlpha: 0
     })
     t4.from(".para", {
         scale: 1.5,
-        duration: 0.5,
+        // duration: 0.5,
         autoAlpha: 0
     })
     t4.from(".list-footer li", {
         clearProps: "all",
         y: -100,
-        duration: 2,
+        // duration: 2,
         autoAlpha: 0,
         stagger: 0.5,
     })
     t4.from(".list-footer li", {
         clearProps: "all",
         y: -100,
-        duration: 1.5,
+        // duration: 1.5,
         autoAlpha: 0,
         stagger: 0.5,
     })
     t4.from(".btns-footer a", {
         clearProps: "all",
         y: -100,
-        duration: 1,
+        // duration: 1,
         autoAlpha: 0,
         stagger: 0.5,
     })
 
     t4.from(".copy", {
         y: -100,
-        duration: 0.7,
+        // duration: 0.7,
         autoAlpha: 0
     })
 })

@@ -94,9 +94,9 @@ main,
 }
 
 .btn-1:hover {
-    background-color: transparent;
+    background-color:#eca958;
     border: 1px solid #F39C32;
-    box-shadow: 2px 2px 20px #F39C32;
+    /* box-shadow: 2px 2px 20px #F39C32; */
 }
 
 .btn-2 {
