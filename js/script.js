@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", e => {
         scrollTrigger: {
             // clearProps:"all",
             trigger: ".products",
-            start: "top 80%",
+            start: "top 100%",
             end: "bottom 20%",
             scrub: true,
         }
