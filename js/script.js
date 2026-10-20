@@ -131,28 +131,28 @@ productsParent.innerHTML = y.join("")
 
 document.addEventListener("DOMContentLoaded", e => {
 
-    // const t1 = gsap.timeline()
-    // t1.from(".main-head", {
-    //     delay: 1,
-    //     scale: 1.5,
-    //     autoAlpha: 0,
-    //     duration: 1.5,
-    //     ease: "elastic"
-    // })
-    // t1.from(".btn-1,.btn-2", {
-    //     y: 100,
-    //     opacity: 0,
-    //     duration: 1,
-    //     stagger: .5,
-    //     ease: "elastic"
+    const t1 = gsap.timeline()
+    t1.from(".main-head", {
+        delay: 1,
+        scale: 1.5,
+        autoAlpha: 0,
+        duration: 1.5,
+        ease: "elastic"
+    })
+    t1.from(".btn-1,.btn-2", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: .5,
+        ease: "elastic"
 
-    // })
-    // t1.from(".img-1", {
-    //     y: 100,
-    //     opacity: 0,
-    //     duration: 1,
-    //     ease: "elastic"
-    // })
+    })
+    t1.from(".img-1", {
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "elastic"
+    })
 
     gsap.registerPlugin(ScrollTrigger)
 
